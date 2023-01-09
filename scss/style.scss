@@ -37,7 +37,8 @@ header {
 
     nav {
         background: $light;
-        padding: 10px;
+        max-width: 1000px;
+        margin-inline: auto;
         
         ul {
             display: none;
@@ -74,7 +75,7 @@ header {
         padding-bottom: 5px;
     }
 
-    h2 {
+    h3 {      
         font-weight: lighter;
         margin-top: 5px;
     }
@@ -84,11 +85,6 @@ header {
     background: $medium;
     padding-block: 50px;
 
-    h2 {
-        text-align: center;
-        text-transform: uppercase;
-        color: $font-color;
-    }
     &__wrapper {
         text-align: center;
         padding: 50px;
@@ -105,12 +101,18 @@ header {
     }
 }
 
+ h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $font-color;
+    }
+
 button {
     background: $bright;
     border: none;
     color: $light;
     text-transform: uppercase;
-    padding: 15px 30px;
+    padding: 10px 50px;
     cursor: pointer;
 }
 
@@ -171,12 +173,15 @@ footer {
         
         address {
             margin-top: 20px;
+
+            p {
+                margin-top: 5px;
+            }
         }
 
         iframe {
             max-width: 100%;
-            min-height: 200px;
-            height: auto;
+            height: 40vh;
             margin-top: 20px;
         }
     }
@@ -193,11 +198,17 @@ footer {
         nav {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
             pointer-events: none;
+            padding: 5px;
 
             ul {
                 display: flex;
+
+                li {
+                    padding: 0;
+                    margin-left: 20px;
+                }
             
             }
         }
@@ -206,5 +217,45 @@ footer {
             max-width: 100%;
             padding-block: 150px;
         }
+    }
+
+    .cars {
+        
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+
+            div {
+                flex: 40%;
+            }
+        }
+    }
+
+    .pricing button {
+        display: none;
+        pointer-events: none;
+    }
+
+    .pricing table {
+        display: table;
+    }
+}
+
+footer {
+
+    .footer-container {
+        max-width: 60%;
+
+        iframe {
+            width: 80%;
+            height: 50vh;
+        }
+    }
+}
+
+@include desktop {
+    header .title--wrapper {
+        max-width: 40%;
     }
 }

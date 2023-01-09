@@ -37,7 +37,8 @@ header {
 }
 header nav {
   background: #fff;
-  padding: 10px;
+  max-width: 1000px;
+  margin-inline: auto;
 }
 header nav ul {
   display: none;
@@ -67,7 +68,7 @@ header h1 {
   border-bottom: 1px solid #FF3720;
   padding-bottom: 5px;
 }
-header h2 {
+header h3 {
   font-weight: lighter;
   margin-top: 5px;
 }
@@ -75,11 +76,6 @@ header h2 {
 .cars {
   background: #F0F0F0;
   padding-block: 50px;
-}
-.cars h2 {
-  text-align: center;
-  text-transform: uppercase;
-  color: #797979;
 }
 .cars__wrapper {
   text-align: center;
@@ -94,12 +90,18 @@ header h2 {
   margin-bottom: 5px;
 }
 
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #797979;
+}
+
 button {
   background: #FF3720;
   border: none;
   color: #fff;
   text-transform: uppercase;
-  padding: 15px 30px;
+  padding: 10px 50px;
   cursor: pointer;
 }
 
@@ -153,10 +155,12 @@ footer .footer-container .logo {
 footer .footer-container address {
   margin-top: 20px;
 }
+footer .footer-container address p {
+  margin-top: 5px;
+}
 footer .footer-container iframe {
   max-width: 100%;
-  min-height: 200px;
-  height: auto;
+  height: 40vh;
   margin-top: 20px;
 }
 
@@ -170,15 +174,51 @@ footer .footer-container iframe {
   header nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     pointer-events: none;
+    padding: 5px;
   }
   header nav ul {
     display: flex;
   }
+  header nav ul li {
+    padding: 0;
+    margin-left: 20px;
+  }
   header .title--wrapper {
     max-width: 100%;
     padding-block: 150px;
+  }
+
+  .cars__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .cars__wrapper div {
+    flex: 40%;
+  }
+
+  .pricing button {
+    display: none;
+    pointer-events: none;
+  }
+
+  .pricing table {
+    display: table;
+  }
+}
+footer .footer-container {
+  max-width: 60%;
+}
+footer .footer-container iframe {
+  width: 80%;
+  height: 50vh;
+}
+
+@media screen and (min-width: 1024px) {
+  header .title--wrapper {
+    max-width: 40%;
   }
 }
 
