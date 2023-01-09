@@ -1,0 +1,210 @@
+@import 'variables';
+@import 'mixins';
+
+@include main;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: $font-color;
+
+    span {
+        color: $bright;
+    }
+}
+
+header {
+    background: $dark;
+    padding: 30px 5px;
+
+    nav {
+        background: $light;
+        padding: 10px;
+        
+        ul {
+            display: none;
+            text-align: center;
+
+            li {
+                text-transform: uppercase;
+                padding: 20px;
+
+                a {
+                    color: $font-color;
+                }
+            }  
+        }
+
+        &:hover ul {
+            cursor: pointer;
+            display: block;    
+        }
+    }
+
+    .title--wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        text-align: center;
+        color: #fff;
+    }
+
+    h1 {
+        font-size: 35px;
+        font-weight: lighter;
+        border-bottom: 1px solid $bright;
+        padding-bottom: 5px;
+    }
+
+    h2 {
+        font-weight: lighter;
+        margin-top: 5px;
+    }
+}
+
+.cars {
+    background: $medium;
+    padding-block: 50px;
+
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $font-color;
+    }
+    &__wrapper {
+        text-align: center;
+        padding: 50px;
+
+        div {
+            margin-top: 60px;
+
+            h3 {
+                color: $font-color;
+                font-weight: normal;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+button {
+    background: $bright;
+    border: none;
+    color: $light;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+
+.pricing {
+    padding: 60px;
+    text-align: center;
+
+    button  {
+        margin-top: 30px;
+
+        &:hover + table {
+        display: table;
+        }
+    }   
+
+    table {
+        border-collapse: collapse;
+        color:  $font-color;
+        width: 60%;
+        margin: 20px auto;
+        display: none;
+
+        td, th {  
+            border-bottom: 1px solid $font-color;
+            padding: 15px;
+        }
+
+        .red-bg {
+            background: $bright;
+            color: $light;
+        }
+
+        .dark-red-bg {
+            background: $dark-bright;
+            color: $light;
+        }
+
+        .grey-bg {
+            background: $medium;
+        }
+    }
+}
+
+footer {
+    background: $dark;
+    color: $light;
+    text-align: center;
+    padding: 20px;
+
+    .footer-container {
+        width: 80%;
+        margin: 0 auto;
+
+        .logo {
+            border-bottom: 1px solid $bright;
+            padding-bottom: 5px;
+        }
+        
+        address {
+            margin-top: 20px;
+        }
+
+        iframe {
+            max-width: 100%;
+            min-height: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+    }
+}
+
+@include tablet {
+
+    header {
+        background-image: url('../slike/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 80vh;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+
+            ul {
+                display: flex;
+            
+            }
+        }
+
+        .title--wrapper {
+            max-width: 100%;
+            padding-block: 150px;
+        }
+    }
+}
